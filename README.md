@@ -22,7 +22,7 @@ Vue.use(SliderModal)<br />
 import Vue from 'vue'
 import App from './App'
 import SliderModal from 'slider-modal';
-import 'slider-modal/dist/styles/sliderModal.css'; 
+import 'slider-modal/dist/styles/slider-modal.css'; 
 Vue.use(SliderModal)
 Vue.config.productionTip = false
 
