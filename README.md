@@ -4,7 +4,7 @@
 
 如果有Bug，请提交一下issues <br />
 
-## ![slideModal](http://7xjfvt.com1.z0.glb.clouddn.com/a.gif)
+## ![slideModal](http://7xjfvt.com1.z0.glb.clouddn.com/demo/a.gif)
 
 ## Usage
 
@@ -12,7 +12,7 @@
 |:-------|:----------|
 | styles |  object   |
 
-
+npm install slider-modal
 
 ```html
 <template>
