@@ -13,32 +13,24 @@
 | styles |  object   |
 
 npm install slider-modal
+import SliderModal from 'slider-modal';
+import 'slider-modal/dist/styles/sliderModal.css'; 
+Vue.use(SliderModal)
 
 ```html
-<template>
-    <div>
-       <sliderModal v-model="modal1" :styles="{width:'700px'}">
-          <img src="https://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/space/pic/item/14ce36d3d539b60010e41dd8e350352ac65cb7b2.jpg" alt="">
+import Vue from 'vue'
+import App from './App'
+import SliderModal from 'slider-modal';
+import 'slider-modal/dist/styles/sliderModal.css'; 
+Vue.use(SliderModal)
+Vue.config.productionTip = false
 
-       </sliderModal>
-       <Button @click="show">显示</Button>
-    </div>
-</template>
-<script>
-    export default {
-        data () {
-            return {
-                modal1: false,
-                val: ''
-            }
-        },
-        methods: {
-           show (){
-            this.modal1 = true;
-           }
-        }
-    }
-</script>
+new Vue({
+  el: '#app',
+  template: '<App/>',
+  components: { App }
+})
+
 
 
 
