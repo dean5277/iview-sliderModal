@@ -1,4 +1,4 @@
-# slideModal
+# sliderModal
 ** 右侧滑出modal 基于iview modal  <br />的基础上做开发，抽离出来一个单独的模块。避免iview更新的时候要重新兼容。 <br />
 
 
