@@ -12,12 +12,13 @@
 |:-------|:----------|
 | styles |  object   |
 
-npm install slider-modal
-import SliderModal from 'slider-modal';
-import 'slider-modal/dist/styles/sliderModal.css'; 
-Vue.use(SliderModal)
+npm install slider-modal <br />
+import SliderModal from 'slider-modal'; <br />
+import 'slider-modal/dist/styles/sliderModal.css';  <br />
+Vue.use(SliderModal)<br />
 
 ```html
+
 import Vue from 'vue'
 import App from './App'
 import SliderModal from 'slider-modal';
