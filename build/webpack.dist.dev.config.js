@@ -12,8 +12,8 @@ module.exports = merge(webpackBaseConfig, {
     output: {
         path: path.resolve(__dirname, '../dist'),
         publicPath: '/dist/',
-        filename: 'slider-modal.js',
-        library: 'slider-modal',
+        filename: 'slide-modal.js',
+        library: 'slide-modal',
         libraryTarget: 'umd',
         umdNamedDefine: true
     },

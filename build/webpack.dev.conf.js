@@ -15,7 +15,7 @@ module.exports = merge(webpackBaseConfig, {
     // 入口
     entry: {
         main: './examples/main',
-        vendors: ['vue', 'vue-router']
+        vendors: ['vue']
     },
     // 输出
     output: {

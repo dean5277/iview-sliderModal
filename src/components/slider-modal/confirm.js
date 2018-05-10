@@ -115,17 +115,10 @@ sliderModal.newInstance = properties => {
                     }, footerVNodes)
                 ])
             ]);
-        },
-        computed: {
-            
-        },
-        methods: {
-           
         }
     });
 
     const component = Instance.$mount();
-    console.log(component.$el)
     document.body.appendChild(component.$el);
     const sliderModal = Instance.$children[0];
 
@@ -133,7 +126,6 @@ sliderModal.newInstance = properties => {
         show (props) {
             sliderModal.$parent.showCancel = props.showCancel;
             sliderModal.$parent.iconType = props.icon;
-
             switch (props.icon) {
                 case 'info':
                     sliderModal.$parent.iconName = 'information-circled';
