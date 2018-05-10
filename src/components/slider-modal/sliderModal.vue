@@ -5,9 +5,9 @@
         </transition>
         <div :class="wrapClasses" @click="handleWrapClick">
             <transition :name="transitionNames[0]">
-                <div class="ivu-sliderModal-content" :style="mainStyles" v-show="visible">
+                <div class="ivu-sliderModal-content" :style="styles" v-show="visible">
                     <template v-if="!buttonVisibile">
-                        <div :class="[prefixCls + '-rightButton']"   :id="[prefixCls + '-rightButton']" :style="{top: domHeight / 2 + 'px', zIndex:'999', left: bvLeft}">
+                        <div :class="[prefixCls + '-rightButton']" :id="[prefixCls + '-rightButton']" :style="{top: domHeight / 2 + 'px', zIndex:'999', left: bvLeft}">
                            <span class="icon iconfont" @click="close">&#xe620;</span>
                         </div>
                     </template>
@@ -58,7 +58,7 @@
                 buttonLoading: false,
                 visible: this.value,
                 domHeight:document.documentElement.clientHeight || document.body.clientHeight || 0,
-                bvLeft:0
+                bvLeft: 0
             }
         },
         directives: { TransferDom },
@@ -72,7 +72,10 @@
                 default: true
             },
             styles: {
-                type: Object
+                type: Object,
+                default () {
+                    return {width: auto};
+                }
             },
             swStyles: {
                 type: Object
@@ -107,8 +110,7 @@
             },
             maskClasses () {
                 return `${prefixCls}-mask`;
-            },
-
+            }
         },
         watch:{
             value (val) {
@@ -127,11 +129,6 @@
                     if (!this.scrollable) {
                         this.addScrollEffect();
                     }
-                }
-            },
-            styles (n, o) {
-                if (n !== o) {
-                    this.mainStyles();
                 }
             }
         },
@@ -190,24 +187,22 @@
             cancel () {
                 this.close();
             },
-            mainStyles () {
-                let style = {};
-                const styleWidth = {
-                    width: `${this.width}px`
+            domResize (fn) {
+                let originFn = window.onresize;
+                window.onresize = function () {
+                    originFn && originFn();
+                    fn();
                 };
-                const customStyle = this.styles ? this.styles : {};
-                Object.assign(style, styleWidth, customStyle);
-                return style;
-            }
+            },
         },
         mounted () {
             let v = this;
             if (v.visible) {
                 v.wrapShow = true;
             }
-            window.onresize = function () {
+            v.domResize(function () {
                 v.domHeight = document.documentElement.clientHeight || document.body.clientHeight || 0
-            }
+            });
         }
     };
 </script>
